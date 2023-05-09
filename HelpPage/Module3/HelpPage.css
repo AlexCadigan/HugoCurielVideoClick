@@ -1,0 +1,36 @@
+/* Created By: Alex Cadigan (https://github.com/AlexCadigan) */
+/* All elements on the page */
+.page {
+    text-align: center;
+    font-size: 20px;
+}
+/* Action bar at top of page */
+#homepage {
+    padding-right: 50px;
+}
+.actionBar {
+    display: inline-block;
+}
+/* Buttons at top of page */
+.headerButtons {
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+.headerButtons:hover, .headerButtons:active {
+    background-color: black;
+    color: white;
+}
+.headerButtons:focus {
+    outline: 0;
+}
+/* Title at top of page */
+#title {
+    font-size: 30px;
+}
+/* Description of the feedback page */
+#description {
+	margin-right: 33%;
+	margin-left: 33%;
+	text-align: justify;
+}

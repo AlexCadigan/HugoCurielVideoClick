@@ -1,0 +1,74 @@
+/* Created By: Alex Cadigan (https://github.com/AlexCadigan) */
+.page {
+    text-align: center;
+    font-size: 20px;
+}
+/* Naviagation bar */
+#homepage {
+    padding-right: 50px;
+}
+#settingsPage {
+    padding-right: 50px;
+}
+#helpPage {
+    padding-right: 50px;
+}
+.actionBar {
+    display: inline-block;
+}
+.headerButtons {
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+.headerButtons:hover, .headerButtons:active {
+    background-color: black;
+    color: white;
+}
+.headerButtons:focus {
+    outline: 0;
+}
+#title {
+    font-size: 30px;
+}
+/* Page buttons */
+.pageButtons {
+    border: 2px solid black;
+    font-size: 15px;
+    height: 35px;
+    width: 225px;
+}
+.pageButtons:hover, .pageButtons:active {
+    background-color: black;
+    color: white;
+}
+.pageButtons:focus {
+    outline: 0;
+}
+/** The YouTube videos */
+.holder {
+    width: 33%;
+    display: inline-block;
+    pointer-events: none;
+    opacity: 0;
+}
+/** The play button */
+#buttonHolder {
+    text-align: center;
+    visibility: hidden;
+}
+#playButton {
+    font-size: 20px;
+    width: 225px;
+    height: 50px;
+    border: 2px solid black;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    pointer-events: auto;
+}
+#playButton:hover, #playButton:active {
+    color: white;
+    background-color: black;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+}
