@@ -5,6 +5,29 @@ function displayHelpPage() { window.location.href = "../HelpPage/Module2_3/HelpP
 function displayFeedbackPage() { window.location.href = "../FeedbackPage/FeedbackPage.html"; }
 
 /**
+ * Generates HTML content for the list of videos to select.
+ */
+function buildVideos() {
+	for (var i = 1; i <= localStorage.videoCount; i ++) {
+		document.getElementById("videoCheckboxes").innerHTML += `
+		<input type = "checkbox" name = "check_list[]"" value = "` + localStorage.getItem("name" + i) + `"> 
+		<label> 
+			<a href = "https://www.youtube.com/watch?v=` + localStorage.getItem("id" + i) + `">
+			` + localStorage.getItem("name" + i) + `
+			</a>
+		</label> 
+		<br />`;
+	}
+}
+
+/**
+ * 
+ */
+function removeVideos() {
+
+}
+
+/**
  * Stores a new YouTube video for use in the module.
  */
 function addVideo() {
@@ -16,69 +39,16 @@ function addVideo() {
 		return;
 	}
 
-	alert("Here");
-
-	// if (typeof(Storage) !== "undefined") {
-	//   alert("Local storage does exist");
-	// } else {
-	//   alert("Local storage doesn't exist");
-	// }
-
-	// localStorage.videoCount = "2";
-	// localStorage.setItem("videoCount", "2");
-
-
-	alert("Local Storage: " + localStorage.videoCount);
-
-	if (isNaN(localStorage.getItem("videoCount"))) {
-		alert("Local storage is null");
-		var numVideos = 1;
+	// Handle cases where no local storage has been initialized
+	if (isNaN(localStorage.videoCount)) {
+		localStorage.videoCount = 1;
 	}
 	else {
-		alert("Local storage isn't null");
-		var numVideos = Number(localStorage.getItem("videoCount")) + 1;
+		localStorage.videoCount = Number(localStorage.videoCount) + 1;
 	}
 
-	// //var numVideos = localStorage.getItem("videoCount") ? localStorage.getItem("videoCount") : 0;
-
-	alert("Num Videos: " + numVideos);
-
-	// localStorage.videoCount = numVideos;
-	// localStorage.setItem("lastname", "Smith");
-
-
-	// <?php
-	// /* Created By: Alex Cadigan (https://github.com/AlexCadigan) */
-	// if (trim($_POST['name']) !== "" && trim($_POST['id']) !== "") {
-	// 	// Reads in the existing videos
-	// 	$fileSize = filesize("../Videos.txt");
-		
-	// 	if ($fileSize > 0) {
-	// 		$readVideos = fopen("../Videos.txt", "r");
-	// 		$videos = explode("\n", fread($readVideos, $fileSize));
-	// 		fclose($readVideos);
-	// 		// Looks for any blank lines and removes them
-	// 		$arrayLength = count($videos);
-	// 		for ($index = 0; $index < $arrayLength; $index ++) {
-	// 			if (trim($videos[$index]) == "") {
-	// 				unset($videos[$index]);
-	// 			}
-	// 		}
-	// 		$videos = array_values($videos);
-	// 		// Writes the videos to the list of videos
-	// 		$writeVideos = fopen("../Videos.txt", "w");
-	// 		for ($index = 0; $index < count($videos); $index ++) {
-	// 			fwrite($writeVideos, trim($videos[$index]) . "\n");
-	// 		}
-	// 	}
-	// 	else {
-	// 		$writeVideos = fopen("../Videos.txt", "w");
-	// 	}
-
-	// 	fwrite($writeVideos, trim($_POST['name']) . "\n" . trim($_POST['id']));
-	// 	fclose($writeVideos);
-	// }
-	// header('Location: Module2_3.html'); ?>
+	localStorage.setItem("name" + localStorage.videoCount, videoName);
+	localStorage.setItem("id" + localStorage.videoCount, videoID);
 }
 
 /* Begins Module 2.3 */

@@ -5,7 +5,7 @@
 		<link rel = "icon" href = "../Icon.png">
 		<link rel = "stylesheet" href = "Module2_3.css">
 	</head>
-	<body>
+	<body onload="buildVideos()">
 		<br> <div id = "pageHolder">
 			<!-- Navigation buttons -->
 			<div class = "page">
@@ -21,31 +21,15 @@
 			</div>
 			<p id = "title" class = "page"> Module 2.3 Settings </p>
 			<!-- Available videos -->
-			<div id = "videos" class = "page">
-				<form action = "RemoveVideo.php" method = "post">
-					<label> Select at most 3 videos: </label> <br>
-					<?php
-					$videos = explode("\n", file_get_contents("../Videos.txt"));
-					$numLines = count($videos);
-					if ($numLines >= 2) {
-						for ($index = 0; $index < $numLines; $index += 2) {
-							echo "<input type = 'checkbox' name = 'check_list[]' value = '" . $videos[$index] . "'> <label> <a href = 'https://www.youtube.com/watch?v=" . $videos[$index + 1] . "'> " . $videos[$index] . " </a> </label> <br>";
-						} 
-					} ?> 
-					<br>
-					<input class = "pageButtons" type = "submit" value = "Remove Selected Video(s)">
-				</form>
+			<div id = "videos" class = "page"> 
+				<label> Select at most 3 videos: </label> <br />
+				<div id="videoCheckboxes"> </div> <br />
+				<button class = "pageButtons" onclick = "removeVideos()"> Remove Selected Video(s) </button> <br /> <br />
 			</div>
 			<div class = "page">
 				<label> Name of video: </label> <input id = "name" type = "text"> <br> <br>
 				<label> Unique ID of video: </label> <input id = "id" type = "text"> <br> <br>
-				<button class = "pageButtons" onclick = "addVideo()"> Add Video </button>
-
-				<form onsubmit="addVideo()">
-					Name of video: <input id="name" type = "text" name = "name"> <br> <br>
-					Unique ID of video: <input id="id" type = "text" name = "id"> <br> <br>
-					<input class = "pageButtons" type = "submit" value = "Add Video">
-				</form>
+				<button class = "pageButtons" onclick = "addVideo()"> Add Video </button> <br /> <br />
 			</div>
 			<!-- Other settings -->
 			<div class = "page">
