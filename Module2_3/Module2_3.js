@@ -1,8 +1,86 @@
 /* Created By: Alex Cadigan (https://github.com/AlexCadigan) */
-function displayHomepage() { window.location.href = "../index.php"; }
+function displayHomepage() { window.location.href = "../index.html"; }
 function displaySettingsPage() { window.location.reload(true); }
-function displayHelpPage() { window.location.href = "../HelpPage/Module2_3/HelpPage.php"; }
-function displayFeedbackPage() { window.location.href = "../FeedbackPage/FeedbackPage.php"; }
+function displayHelpPage() { window.location.href = "../HelpPage/Module2_3/HelpPage.html"; }
+function displayFeedbackPage() { window.location.href = "../FeedbackPage/FeedbackPage.html"; }
+
+/**
+ * Stores a new YouTube video for use in the module.
+ */
+function addVideo() {
+	var videoName = document.getElementById("name").value;
+	var videoID = document.getElementById("id").value;
+
+	// Validate user actually entered data
+	if (videoName == "" || videoID == "") {
+		return;
+	}
+
+	alert("Here");
+
+	// if (typeof(Storage) !== "undefined") {
+	//   alert("Local storage does exist");
+	// } else {
+	//   alert("Local storage doesn't exist");
+	// }
+
+	// localStorage.videoCount = "2";
+	// localStorage.setItem("videoCount", "2");
+
+
+	alert("Local Storage: " + localStorage.videoCount);
+
+	if (isNaN(localStorage.getItem("videoCount"))) {
+		alert("Local storage is null");
+		var numVideos = 1;
+	}
+	else {
+		alert("Local storage isn't null");
+		var numVideos = Number(localStorage.getItem("videoCount")) + 1;
+	}
+
+	// //var numVideos = localStorage.getItem("videoCount") ? localStorage.getItem("videoCount") : 0;
+
+	alert("Num Videos: " + numVideos);
+
+	// localStorage.videoCount = numVideos;
+	// localStorage.setItem("lastname", "Smith");
+
+
+	// <?php
+	// /* Created By: Alex Cadigan (https://github.com/AlexCadigan) */
+	// if (trim($_POST['name']) !== "" && trim($_POST['id']) !== "") {
+	// 	// Reads in the existing videos
+	// 	$fileSize = filesize("../Videos.txt");
+		
+	// 	if ($fileSize > 0) {
+	// 		$readVideos = fopen("../Videos.txt", "r");
+	// 		$videos = explode("\n", fread($readVideos, $fileSize));
+	// 		fclose($readVideos);
+	// 		// Looks for any blank lines and removes them
+	// 		$arrayLength = count($videos);
+	// 		for ($index = 0; $index < $arrayLength; $index ++) {
+	// 			if (trim($videos[$index]) == "") {
+	// 				unset($videos[$index]);
+	// 			}
+	// 		}
+	// 		$videos = array_values($videos);
+	// 		// Writes the videos to the list of videos
+	// 		$writeVideos = fopen("../Videos.txt", "w");
+	// 		for ($index = 0; $index < count($videos); $index ++) {
+	// 			fwrite($writeVideos, trim($videos[$index]) . "\n");
+	// 		}
+	// 	}
+	// 	else {
+	// 		$writeVideos = fopen("../Videos.txt", "w");
+	// 	}
+
+	// 	fwrite($writeVideos, trim($_POST['name']) . "\n" . trim($_POST['id']));
+	// 	fclose($writeVideos);
+	// }
+	// header('Location: Module2_3.html'); ?>
+}
+
 /* Begins Module 2.3 */
 function startModule() {
 	// Collects user input
