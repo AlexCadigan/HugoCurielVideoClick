@@ -1,8 +1,8 @@
 /* Created By: Alex Cadigan (https://github.com/AlexCadigan) */
-function displayHomepage() { window.location.href = "../index.php"; }
+function displayHomepage() { window.location.href = "../index.html"; }
 function displaySettingsPage() { window.location.reload(true); }
-function displayHelpPage() { window.location.href = "../HelpPage/Module3/HelpPage.php"; }
-function displayFeedbackPage() { window.location.href = "../FeedbackPage/FeedbackPage.php"; }
+function displayHelpPage() { window.location.href = "../HelpPage/Module3/HelpPage.html"; }
+function displayFeedbackPage() { window.location.href = "../FeedbackPage/FeedbackPage.html"; }
 /* Begins Module 2.3 */
 function startModule() {
 	// Collects user input

@@ -29,4 +29,4 @@ if (trim($_POST['name']) !== "" && trim($_POST['id']) !== "") {
 	fwrite($writeVideos, trim($_POST['name']) . "\n" . trim($_POST['id']));
 	fclose($writeVideos);
 }
-header('Location: Module3.php'); ?>
+header('Location: Module3.html'); ?>

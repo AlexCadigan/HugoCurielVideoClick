@@ -35,4 +35,4 @@ foreach ($_POST['check_list'] as $videoToRemove) {
 	}
 	fclose($writeVideos);
 }
-header('Location: Module2_3.php'); ?>
+header('Location: Module2_3.html'); ?>
