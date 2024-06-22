@@ -8,9 +8,7 @@ The Video Click Project is a website that contains modules to play YouTube video
 
 The Video Click Project can be found here:
 
-- [Video Click Project](https://videoclickproject.000webhostapp.com/) (hosted by [000webhost](https://www.000webhost.com/))
-
-The website is currently password protected and is not accessible to the public.
+- [Video Click Project](https://alexcadigan.github.io/HugoCurielVideoClick/) (hosted by [GitHub Pages](https://pages.github.com/))
 
 ## Authors
 
