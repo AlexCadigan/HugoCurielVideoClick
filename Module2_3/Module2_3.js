@@ -4,53 +4,6 @@ function displaySettingsPage() { window.location.reload(true); }
 function displayHelpPage() { window.location.href = "../HelpPage/Module2_3/HelpPage.html"; }
 function displayFeedbackPage() { window.location.href = "../FeedbackPage/FeedbackPage.html"; }
 
-/**
- * Generates HTML content for the list of videos to select.
- */
-function buildVideos() {
-	for (var i = 1; i <= localStorage.videoCount; i ++) {
-		document.getElementById("videoCheckboxes").innerHTML += `
-		<input type = "checkbox" name = "check_list[]"" value = "` + localStorage.getItem("name" + i) + `"> 
-		<label> 
-			<a href = "https://www.youtube.com/watch?v=` + localStorage.getItem("id" + i) + `">
-			` + localStorage.getItem("name" + i) + `
-			</a>
-		</label> 
-		<br />`;
-	}
-}
-
-/**
- * 
- */
-function removeVideos() {
-
-}
-
-/**
- * Stores a new YouTube video for use in the module.
- */
-function addVideo() {
-	var videoName = document.getElementById("name").value;
-	var videoID = document.getElementById("id").value;
-
-	// Validate user actually entered data
-	if (videoName == "" || videoID == "") {
-		return;
-	}
-
-	// Handle cases where no local storage has been initialized
-	if (isNaN(localStorage.videoCount)) {
-		localStorage.videoCount = 1;
-	}
-	else {
-		localStorage.videoCount = Number(localStorage.videoCount) + 1;
-	}
-
-	localStorage.setItem("name" + localStorage.videoCount, videoName);
-	localStorage.setItem("id" + localStorage.videoCount, videoID);
-}
-
 /* Begins Module 2.3 */
 function startModule() {
 	// Collects user input
